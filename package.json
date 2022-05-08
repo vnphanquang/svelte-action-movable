@@ -7,6 +7,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "lint:es": "eslint --ignore-path .gitignore .",
     "format": "prettier --check --config ./prettierrc.yaml .",
