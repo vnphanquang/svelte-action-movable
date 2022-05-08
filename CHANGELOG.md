@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.3](https://github.com/vnphanquang/svelte-action-movable/compare/v1.0.2...v1.0.3) (2022-05-08)
+
+
+### Bug Fixes
+
+* **build:** use rollup for consistency ([37e1a2a](https://github.com/vnphanquang/svelte-action-movable/commit/37e1a2a712a45956b4c505dba5a1c31558bfc73f))
+
 ### [1.0.2](https://github.com/vnphanquang/svelte-action-movable/compare/v1.0.1...v1.0.2) (2022-05-08)
 
 
