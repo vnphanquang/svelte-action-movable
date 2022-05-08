@@ -1,3 +1,25 @@
+const conventionalcommits = {
+  issueUrlFormat: '{{host}}/{{owner}}/{{repository}}/issues/{{id}}',
+  commitUrlFormat: '{{host}}/{{owner}}/{{repository}}/commit/{{hash}}',
+  compareUrlFormat: '{{host}}/{{owner}}/{{repository}}/compare/{{previousTag}}...{{currentTag}}',
+  userUrlFormat: '{{host}}/{{user}}',
+  issuePrefixes: ['#'],
+  types: [
+    { type: 'feat', section: 'Features' },
+    { type: 'feature', section: 'Features' },
+    { type: 'fix', section: 'Bug Fixes' },
+    { type: 'perf', section: 'Performance Improvements' },
+    { type: 'revert', section: 'Reverts' },
+    { type: 'docs', section: 'Documentation' },
+    { type: 'refactor', section: 'Code Refactoring' },
+    { type: 'test', section: 'Tests' },
+    { type: 'build', section: 'Build System' },
+    { type: 'ci', section: 'Continuous Integration' },
+    { type: 'style', section: 'Styles', hidden: true },
+    { type: 'chore', section: 'Miscellaneous Chores', hidden: true },
+  ],
+};
+
 /** @type {import('semantic-release').Options} */
 const options = {
   ci: true,
@@ -14,9 +36,19 @@ const options = {
       '@semantic-release/commit-analyzer',
       {
         preset: 'conventionalcommits',
+        presetConfig: conventionalcommits,
+        releaseRules: [
+          {"type": "docs", "scope": "README", "release": "patch"},
+        ],
       },
     ],
-    '@semantic-release/release-notes-generator',
+    [
+      '@semantic-release/release-notes-generator',
+      {
+        preset: 'conventionalcommits',
+        presetConfig: conventionalcommits,
+      }
+    ],
     [
       '@semantic-release/changelog',
       {
@@ -24,12 +56,8 @@ const options = {
         changelogFile: 'CHANGELOG.md',
       },
     ],
-    [
-      '@semantic-release/github',
-      {
-        assets: [{ path: 'lib/index.js', label: 'Github Action distribution' }],
-      },
-    ],
+    '@semantic-release/npm',
+    '@semantic-release/github',
     [
       '@semantic-release/git',
       {

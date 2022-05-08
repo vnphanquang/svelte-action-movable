@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![github.release.badge]][github.release] [![semantic-release.badge]][semantic-release] [![MIT][license.badge]][license]
+[![npm.badge]][npm] [![bundlephobia.badge]][bundlephobia] [![github.release.badge]][github.release] [![semantic-release.badge]][semantic-release] [![MIT][license.badge]][license]
 
 [![github.actions.release.badge]][github.actions.release]
 
@@ -149,7 +149,10 @@ Quick access to the parameter interface accepted by the action: [MovableParamete
 [github.api.movableparameters]: api/docs/svelte-movable.movableparameters.md
 
 <!-- heading badge -->
-
+[npm.badge]: https://img.shields.io/npm/v/svelte-movable
+[npm]: https://www.npmjs.com/package/svelte-movable
+[bundlephobia.badge]: https://img.shields.io/bundlephobia/minzip/svelte-movable?label=minzipped
+[bundlephobia]: https://bundlephobia.com/package/svelte-movable
 [semantic-release]: https://github.com/semantic-release/semantic-release
 [semantic-release.badge]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [tweet]: https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2vnphanquang%2Fsvelte-action-movable
