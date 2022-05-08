@@ -64,8 +64,6 @@ const options = {
         assets: [
           'CHANGELOG.md',
           'package.json',
-          'pnpm-lock.yaml',
-          'lib',
         ],
         message: `chore(release): <%= nextRelease.version %> - <%= new Date().toLocaleDateString('en-US', {year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }) %> [skip ci]`,
       },
