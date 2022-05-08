@@ -1,0 +1,17 @@
+{
+  "include": [ "./src/**/*.ts" ],
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["es2020", "DOM"],
+    "moduleResolution": "node",
+    "module": "es2020",
+    "strict": true,
+    "target": "es2020",
+    "sourceMap": true,
+    "outDir": "./lib",
+    "declaration": true,
+    "declarationDir": "./lib",
+    "declarationMap": true
+  }
+}
