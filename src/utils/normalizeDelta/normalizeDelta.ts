@@ -13,7 +13,7 @@ type NormalizedLimit = {
 /**
  * @internal
  *
- * @param delta
+ * @param delta - MovableLimit to normalize
  * @returns
  */
 export function normalizeDelta(delta?: MovableLimit['delta']): {

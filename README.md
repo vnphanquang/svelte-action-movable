@@ -30,12 +30,19 @@
 <details open>
   <summary>Example: show / hide</summary>
 
+While `mousedown` of the trigger `button` element
+
+- `mousemove` will trigger `div` to move accordingly; a `CustomEvent` `movablestart`is dispatched,
+- movement will be limited to the border of the `containerNode`, plus and minus 20% of the width & height of the `div` that the action is being used on,
+- `mouseup` will stop the movement; a `CustomEvent` `movableend` is dispatched.
+
 ```svelte
-<script>
+<script lang="ts">
   import arrows from 'svelte-awesome/icons/arrows';
   import Icon from 'svelte-awesome/components/Icon.svelte';
 
   let modal = false;
+  let triggerNode: HTMLElement;
 </script>
 
 <container>
@@ -52,8 +59,8 @@
         },
         trigger: triggerNode,
       }}
-      on:movablestart={() => console.log('movable:start')}
-      on:movableend={() => console.log('movable:end')}
+      on:movablestart={(node) => console.log('movable:start', node)}
+      on:movableend={(node) => console.log('movable:end', node)}
     >
       <button
         bind:this={triggerNode}
@@ -99,6 +106,10 @@ declare namespace svelte.JSX {
 
 For detailed documentation, see the [extracted API][github.api].
 
+Quick access to the parameter interface accepted by the action: [MovableParameters][github.api.movableparameters].
+
+**Note**: action accepts `Partial<MovableParameters>`. By default you don't need to provide any option.
+
 ## Contributing
 
 [Read Contribution Guide][github.contributing]
@@ -135,6 +146,7 @@ For detailed documentation, see the [extracted API][github.api].
 [github.contributing]: ./CONTRIBUTING
 [github.issues]: https://github.com/vnphanquang/svelte-action-movable/issues?q=
 [github.api]: ./api/docs/index.md
+[github.api.movableparameters]: api/docs/svelte-movable.movableparameters.md
 
 <!-- heading badge -->
 
