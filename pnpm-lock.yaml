@@ -11,6 +11,7 @@ specifiers:
   '@semantic-release/release-notes-generator': ^10.0.3
   '@typescript-eslint/eslint-plugin': ^5.22.0
   '@typescript-eslint/parser': ^5.22.0
+  conventional-changelog-conventionalcommits: ^4.6.3
   eslint: ^8.15.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-import: ^2.26.0
@@ -31,6 +32,7 @@ devDependencies:
   '@semantic-release/release-notes-generator': 10.0.3_semantic-release@19.0.2
   '@typescript-eslint/eslint-plugin': 5.22.0_tal4xlmvnofklupd3hwjtzfb4q
   '@typescript-eslint/parser': 5.22.0_hcfsmds2fshutdssjqluwm76uu
+  conventional-changelog-conventionalcommits: 4.6.3
   eslint: 8.15.0
   eslint-config-prettier: 8.5.0_eslint@8.15.0
   eslint-plugin-import: 2.26.0_eslint@8.15.0
@@ -889,6 +891,15 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       compare-func: 2.0.0
+      q: 1.5.1
+    dev: true
+
+  /conventional-changelog-conventionalcommits/4.6.3:
+    resolution: {integrity: sha512-LTTQV4fwOM4oLPad317V/QNQ1FY4Hju5qeBIM1uTHbrnCE+Eg4CdRZ3gO2pUeR+tzWdp80M2j3qFFEDWVqOV4g==}
+    engines: {node: '>=10'}
+    dependencies:
+      compare-func: 2.0.0
+      lodash: 4.17.21
       q: 1.5.1
     dev: true
 

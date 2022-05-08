@@ -27,7 +27,7 @@ const options = {
     [
       '@semantic-release/github',
       {
-        assets: [{ path: 'dist/index.js', label: 'Github Action distribution' }],
+        assets: [{ path: 'lib/index.js', label: 'Github Action distribution' }],
       },
     ],
     [
@@ -36,9 +36,8 @@ const options = {
         assets: [
           'CHANGELOG.md',
           'package.json',
-          'package-lock.json',
-          'npm-shrinkwrap.json',
-          'dist/index.js',
+          'pnpm-lock.yaml',
+          'lib',
         ],
         message: `chore(release): <%= nextRelease.version %> - <%= new Date().toLocaleDateString('en-US', {year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }) %> [skip ci]`,
       },
