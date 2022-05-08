@@ -1,6 +1,6 @@
 {
   "name": "svelte-movable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Action to move node on mousedown",
   "main": "lib/index.js",
   "type": "module",

@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://github.com/vnphanquang/svelte-action-movable/compare/v1.0.0...v1.0.1) (2022-05-08)
+
+
+### Bug Fixes
+
+* **release:** set semantic-release to publish to npm ([a21fe70](https://github.com/vnphanquang/svelte-action-movable/commit/a21fe70a21009e6ff88bb53475f35f0cc430c30c))
+
 # 1.0.0 (2022-05-08)
 
 
