@@ -27,10 +27,8 @@ const options = {
     [
       '@semantic-release/github',
       {
-        "assets": [
-          { "path": "dist/index.js", "label": "Github Action distribution" },
-        ]
-      }
+        assets: [{ path: 'dist/index.js', label: 'Github Action distribution' }],
+      },
     ],
     [
       '@semantic-release/git',

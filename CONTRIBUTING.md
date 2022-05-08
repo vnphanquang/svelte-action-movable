@@ -30,8 +30,8 @@ Each pull request should [reference an open issue][github.issues.open] unless th
 
 1. Commit message should follow the [Conventional Commits specification][conventionalcommits], this will enable [semantic-release][semanticrelease] to automate the workflow properly.
 2. Code should be formatted with [prettier] and linted with [eslint]. They are already integrated into the codebase. See [package.json] for relevant scripts. There might also exist extensions for your editor that further enhance the experience with these tools.
-    - [VS Code Prettier][vscode.extension.prettier]
-    - [VS Code Eslint][vscode.extension.eslint]
+   - [VS Code Prettier][vscode.extension.prettier]
+   - [VS Code Eslint][vscode.extension.eslint]
 
 ## Development Setup
 
