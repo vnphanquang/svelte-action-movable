@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.4](https://github.com/vnphanquang/svelte-action-movable/compare/v1.0.3...v1.0.4) (2022-05-08)
+
+
+### Bug Fixes
+
+* **normalizeDelta:** correctly extract px unit ([9e57f65](https://github.com/vnphanquang/svelte-action-movable/commit/9e57f655efb022165698ecf9a01a6420d42ae34e))
+
 ### [1.0.3](https://github.com/vnphanquang/svelte-action-movable/compare/v1.0.2...v1.0.3) (2022-05-08)
 
 
