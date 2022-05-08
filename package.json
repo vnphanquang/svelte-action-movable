@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "lint:es": "eslint --ignore-path .gitignore .",
-    "format": "prettier --check --config ./prettierrc.yaml .",
+    "format": "prettier --check --ignore-path .gitignore --plugin-search-dir=. \"./**/*.{ts,js,cjs,json}\"",
     "build": "rollup -c",
     "semantic-release": "semantic-release",
     "api:extract": "api-extractor run --local --verbose",

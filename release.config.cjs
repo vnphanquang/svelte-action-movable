@@ -37,9 +37,7 @@ const options = {
       {
         preset: 'conventionalcommits',
         presetConfig: conventionalcommits,
-        releaseRules: [
-          {"type": "docs", "scope": "README", "release": "patch"},
-        ],
+        releaseRules: [{ type: 'docs', scope: 'README', release: 'patch' }],
       },
     ],
     [
@@ -47,7 +45,7 @@ const options = {
       {
         preset: 'conventionalcommits',
         presetConfig: conventionalcommits,
-      }
+      },
     ],
     [
       '@semantic-release/changelog',
@@ -61,10 +59,7 @@ const options = {
     [
       '@semantic-release/git',
       {
-        assets: [
-          'CHANGELOG.md',
-          'package.json',
-        ],
+        assets: ['CHANGELOG.md', 'package.json'],
         message: `chore(release): <%= nextRelease.version %> - <%= new Date().toLocaleDateString('en-US', {year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }) %> [skip ci]`,
       },
     ],

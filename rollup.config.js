@@ -11,10 +11,7 @@ const config = {
     dir: './lib',
     format: 'esm',
   },
-  plugins: [
-    typescript(),
-    filesize(),
-  ],
+  plugins: [typescript(), filesize()],
 };
 
 export default config;
