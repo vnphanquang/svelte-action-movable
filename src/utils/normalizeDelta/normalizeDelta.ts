@@ -24,8 +24,12 @@ export function normalizeDelta(delta?: MovableLimit['delta']): {
   const y: NormalizedLimit = { unit: 'px', value: 0 };
 
   const extractUnit = (text: string, axis?: 'x' | 'y'): 'px' | '%' => {
-    const unit = text.slice(-1);
-    if (unit !== '%' && unit !== 'px') {
+    let unit: 'px' | '%' = 'px';
+    if (text.slice(-1) === '%') {
+      unit = '%';
+    } else if (text.slice(-2) === 'px') {
+      unit = 'px';
+    } else {
       throw new Error(`Invalid delta ${axis ?? ''} unit. Only 'px' and '%' are supported.`);
     }
     return unit;
