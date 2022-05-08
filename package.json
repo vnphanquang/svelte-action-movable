@@ -40,13 +40,20 @@
   "devDependencies": {
     "@microsoft/api-documenter": "^7.17.12",
     "@microsoft/api-extractor": "^7.23.1",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.4",
+    "@semantic-release/npm": "^9.0.1",
+    "@semantic-release/release-notes-generator": "^10.0.3",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
     "@typescript-eslint/parser": "^5.22.0",
+    "changelog": "link:@semantic/release/changelog",
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.6.2",
+    "semantic-release": "^19.0.2",
     "tslib": "^2.4.0",
     "typescript": "^4.6.4"
   }
