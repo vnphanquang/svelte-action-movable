@@ -2,9 +2,9 @@
 
 <div align="center">
 
-[![npm.badge]][npm] [![bundlephobia.badge]][bundlephobia] [![github.release.badge]][github.release] [![semantic-release.badge]][semantic-release] [![MIT][license.badge]][license]
+[![npm.badge]][npm] [![bundlephobia.badge]][bundlephobia] [![semantic-release.badge]][semantic-release] [![MIT][license.badge]][license]
 
-[![github.actions.release.badge]][github.actions.release]
+[![github.actions.release.badge]][github.actions.release] [![github.release.badge]][github.release]
 
 ![demo](./static/images/demo.gif)
 
