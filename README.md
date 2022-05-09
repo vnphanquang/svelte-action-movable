@@ -62,9 +62,9 @@ See [example for typical usage here][github.api.movable]
 declare namespace svelte.JSX {
   interface HTMLAttributes<T> {
     // on:movablestart
-    onmovablestart?: (event: CustomEvent<HTMLElement>) => void;
+    onmovablestart?: (event: CustomEvent<import('svelte-movable').MovableEventDetails>) => void;
     // on:movableend
-    onmovableend?: (event: CustomEvent<HTMLElement>) => void;
+    onmovableend?: (event: CustomEvent<import('svelte-movable').MovableEventDetails>) => void;
   }
 }
 ```
