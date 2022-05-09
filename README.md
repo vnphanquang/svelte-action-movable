@@ -18,14 +18,26 @@
 - [Svelte Action - `use:movable`](#svelte-action---usemovable)
   - [Table of Contents](#table-of-contents)
   - [Changelog](#changelog)
+  - [Installation](#installation)
   - [Usage](#usage)
   - [Documentation](#documentation)
+    - [Typescript support](#typescript-support)
   - [Contributing](#contributing)
   - [Todos](#todos)
 
 </details>
 
 ## [Changelog][github.changelog]
+
+## Installation
+
+```bash
+npm install svelte-movable
+yarn add svelte-movable
+pnpm add svelte-movable
+
+# Note: add to dev dependencies instead if using svelte-kit
+```
 
 ## Usage
 
