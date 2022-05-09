@@ -29,53 +29,7 @@
 
 ## Usage
 
-<details open>
-  <summary>Example: show / hide</summary>
-
-- `mousedown` of the trigger `button` element, a `CustomEvent` `movablestart`is dispatched,
-- `mousemove` will trigger `div` to move accordingly;
-- movement will be limited to the border of the `containerNode`, plus and minus 20% of the width & height of the `div` that the action is being used on,
-- `mouseup` will stop the movement; a `CustomEvent` `movableend` is dispatched.
-
-```svelte
-<script lang="ts">
-  import arrows from 'svelte-awesome/icons/arrows';
-  import Icon from 'svelte-awesome/components/Icon.svelte';
-
-  let modal = false;
-  let triggerNode: HTMLElement;
-</script>
-
-<container>
-  <!-- ... some other content ... -->
-
-  {#if modal}
-    <div
-      transition:fade={{ duration: 200 }}
-      class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-full max-w-sm"
-      use:movable={{
-        limit: {
-          delta: '20%',
-          parent: containerNode,
-        },
-        trigger: triggerNode,
-      }}
-      on:movablestart={(node) => console.log('movable:start', node)}
-      on:movableend={(node) => console.log('movable:end', node)}
-    >
-      <button
-        bind:this={triggerNode}
-        class="c-btn-icon absolute top-2 right-10 hover:cursor-move"
-      >
-        <Icon data={arrows} />
-      </button>
-
-      <!-- ... some other modal content ... -->
-    </div>
-{/if}
-
-</container>
-```
+See [example for typical usage here][github.api.movable]
 
 </details>
 
@@ -148,6 +102,7 @@ Quick access to the parameter interface accepted by the action: [MovableParamete
 [github.issues]: https://github.com/vnphanquang/svelte-action-movable/issues?q=
 [github.api]: ./api/docs/index.md
 [github.api.movableparameters]: api/docs/svelte-movable.movableparameters.md
+[github.api.movable]: api/docs/svelte-movable.movable.md
 
 <!-- heading badge -->
 [npm.badge]: https://img.shields.io/npm/v/svelte-movable

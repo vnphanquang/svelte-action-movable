@@ -87,3 +87,18 @@ export interface MovableParameters {
    */
   trigger?: HTMLElement;
 }
+
+/**
+ * the detail payload for `movableend` and `movablestart` CustomEvent
+ */
+export interface MovableEventDetails {
+  /** the node that the action was placed on */
+  node: HTMLElement;
+  /** last known position, as in styles.position */
+  position: {
+    /** styles.position.left */
+    left: number;
+    /** styles.position.right */
+    top: number;
+  };
+}

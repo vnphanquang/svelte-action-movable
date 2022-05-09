@@ -1,4 +1,4 @@
-import type { MovableParameters } from './types';
+import type { MovableEventDetails, MovableParameters } from './types';
 import { input } from './utils';
 
 /**
@@ -19,12 +19,27 @@ import { input } from './utils';
  *
  * <-- incorrect usage-->
  * <Component use:movable/>
+ *
+ * ### Side Effects
+ *
+ * Be aware that:
+ *
+ * - element.style.position is set to `relative` (if not already 'absolute' / 'relative') the first time mousedown is triggered
+ * - document.body.userSelect is set to `none` after `mousedown` and restored on `mouseup`
+ * - document.body.cursor is set to `move` after `mousedown` and restored on `mouseup`
+ *
  * ```
  *
  * @example Typical usage
  *
+ * 1. `mousedown` of the trigger `button` element, a `CustomEvent` `movablestart`is dispatched,
+ * 2. `mousemove` will trigger `div` to move accordingly;
+ * 3. movement will be limited to the border of the `containerNode`, plus and minus 20% of the width & height of the `div` that the action is being used on,
+ * 4. `mouseup` will stop the movement; a `CustomEvent` `movableend` is dispatched.
+ *
  * ```svelte
  * <script lang="ts">
+ *   import { fade } from 'svelte/transition'
  *   import arrows from 'svelte-awesome/icons/arrows';
  *   import Icon from 'svelte-awesome/components/Icon.svelte';
  *
@@ -46,8 +61,8 @@ import { input } from './utils';
  *         },
  *         trigger: triggerNode,
  *       }}
- *       on:movablestart={() => console.log('movable:start')}
- *       on:movableend={() => console.log('movable:end')}
+ *       on:movablestart={(event) => console.log('movable:start', event.detail.node, event.detail.position)}
+ *       on:movableend={(event) => console.log('movable:end', event.detail.node, event.detail.position)}
  *     >
  *       <button
  *         bind:this={triggerNode}
@@ -169,12 +184,12 @@ export function movable(
     document.body.style.cursor = '';
     window.removeEventListener('mousemove', onMouseMove);
     window.removeEventListener('mouseup', end);
-    node.dispatchEvent(new CustomEvent('movableend', { detail: node }));
+
+    const detail: MovableEventDetails = { node, position: lastNodePosition };
+    node.dispatchEvent(new CustomEvent('movableend', { detail }));
   };
 
   const onMouseDown = (event: MouseEvent) => {
-    node.dispatchEvent(new CustomEvent('movablestart', { detail: node }));
-
     const computedStyles = getComputedStyle(node);
 
     // init position
@@ -182,6 +197,9 @@ export function movable(
     const left = parseInt(computedStyles.getPropertyValue('left').match(regex)?.[0] ?? '0');
     const top = parseInt(computedStyles.getPropertyValue('top').match(regex)?.[0] ?? '0');
     updateLastNodePosition({ left, top });
+
+    const detail: MovableEventDetails = { node, position: lastNodePosition };
+    node.dispatchEvent(new CustomEvent('movablestart', { detail }));
 
     // init position style
     const position = computedStyles.getPropertyValue('position');
