@@ -16,13 +16,12 @@ svelte action - `use:movable` move node on mousedown
 
 |  Interface | Description |
 |  --- | --- |
+|  [MovableLimit](./svelte-movable.movablelimit.md) | The limit within which node can be moved |
 |  [MovableParameters](./svelte-movable.movableparameters.md) | svelte action parameters to config behavior of movable |
 
 ## Type Aliases
 
 |  Type Alias | Description |
 |  --- | --- |
-|  [MovableCachePolicy](./svelte-movable.movablecachepolicy.md) | Cache policy for last known position of node |
-|  [MovableLimit](./svelte-movable.movablelimit.md) | The limit within which node can be moved |
 |  [MovableLimitDelta](./svelte-movable.movablelimitdelta.md) | Limit by creating a bounding box of movable area \[-delta, +delta\] in both axes |
 

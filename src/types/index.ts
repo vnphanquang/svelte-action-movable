@@ -1,22 +1,4 @@
 /**
- * Cache policy for last known position of node
- * @public
- *
- * @remarks
- *
- * `'session'` & `'local'` mean using session storage & local storage, respectively.
- *
- * @example
- *
- * ```svelte
- * <div use:movable={{
- *    policy: 'session',
- * }} />
- * ```
- */
-export type MovableCachePolicy = 'session' | 'local' | 'none';
-
-/**
  * Limit by creating a bounding box of movable area [-delta, +delta] in both axes
  * @public
  *
@@ -52,13 +34,9 @@ export type MovableLimitDelta = `${number}px` | `${number}%`;
 
 /**
  * The limit within which node can be moved
- *
- * @remarks
- *
- *
  * @public
  */
-export type MovableLimit = {
+export interface MovableLimit {
   /**
    * Move node within this parent node
    */
@@ -86,14 +64,9 @@ export type MovableLimit = {
  */
 export interface MovableParameters {
   /** whether to trigger the action */
-  enabled: boolean;
+  enabled?: boolean;
   /** Set a limit within which node can be moved */
   limit?: MovableLimit;
-  /**
-   * Cache policy for last known position of node
-   * @alpha
-   */
-  cache: MovableCachePolicy;
   /**
    * A node that triggers mousedown event, otherwise the node itself is the trigger
    *

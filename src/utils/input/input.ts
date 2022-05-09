@@ -9,12 +9,11 @@ import { normalizeDelta } from '../normalizeDelta';
  * @param parameters
  * @returns
  */
-export function input(node: HTMLElement, parameters: Partial<MovableParameters>) {
+export function input(node: HTMLElement, parameters: MovableParameters) {
   return {
     enabled: parameters.enabled ?? true,
     parent: parameters.limit?.parent,
     normalizedDelta: normalizeDelta(parameters.limit?.delta),
-    cache: parameters.cache ?? 'none',
     trigger: parameters.trigger ?? node,
   };
 }

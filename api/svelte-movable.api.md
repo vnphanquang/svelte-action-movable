@@ -11,25 +11,20 @@ export function movable(node: HTMLElement, parameters?: Partial<MovableParameter
 };
 
 // @public
-export type MovableCachePolicy = 'session' | 'local' | 'none';
-
-// @public
-export type MovableLimit = {
-    parent?: HTMLElement;
+export interface MovableLimit {
     delta?: {
         x: MovableLimitDelta;
         y: MovableLimitDelta;
     } | MovableLimitDelta;
-};
+    parent?: HTMLElement;
+}
 
 // @public
 export type MovableLimitDelta = `${number}px` | `${number}%`;
 
 // @public
 export interface MovableParameters {
-    // @alpha
-    cache: MovableCachePolicy;
-    enabled: boolean;
+    enabled?: boolean;
     limit?: MovableLimit;
     trigger?: HTMLElement;
 }

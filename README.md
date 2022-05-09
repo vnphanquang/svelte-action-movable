@@ -109,7 +109,7 @@ For detailed documentation, see the [extracted API][github.api].
 
 Quick access to the parameter interface accepted by the action: [MovableParameters][github.api.movableparameters].
 
-**Note**: action accepts `Partial<MovableParameters>`. By default you don't need to provide any option.
+**Note**: `MovableParameters` has properties that are all optional. By default you don't need to provide any parameter to the action.
 
 ## Contributing
 

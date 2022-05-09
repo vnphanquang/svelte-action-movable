@@ -2,23 +2,20 @@
 
 [Home](./index.md) &gt; [svelte-movable](./svelte-movable.md) &gt; [MovableLimit](./svelte-movable.movablelimit.md)
 
-## MovableLimit type
+## MovableLimit interface
 
 The limit within which node can be moved
 
 <b>Signature:</b>
 
 ```typescript
-export declare type MovableLimit = {
-    parent?: HTMLElement;
-    delta?: {
-        x: MovableLimitDelta;
-        y: MovableLimitDelta;
-    } | MovableLimitDelta;
-};
+export interface MovableLimit 
 ```
-<b>References:</b> [MovableLimitDelta](./svelte-movable.movablelimitdelta.md)
 
-## Remarks
+## Properties
 
+|  Property | Type | Description |
+|  --- | --- | --- |
+|  [delta?](./svelte-movable.movablelimit.delta.md) | { x: [MovableLimitDelta](./svelte-movable.movablelimitdelta.md)<!-- -->; y: [MovableLimitDelta](./svelte-movable.movablelimitdelta.md)<!-- -->; } \| [MovableLimitDelta](./svelte-movable.movablelimitdelta.md) | <i>(Optional)</i> Bounding box limit in both axes |
+|  [parent?](./svelte-movable.movablelimit.parent.md) | HTMLElement | <i>(Optional)</i> Move node within this parent node |
 

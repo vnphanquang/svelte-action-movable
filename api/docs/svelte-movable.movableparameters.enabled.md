@@ -9,5 +9,5 @@ whether to trigger the action
 <b>Signature:</b>
 
 ```typescript
-enabled: boolean;
+enabled?: boolean;
 ```

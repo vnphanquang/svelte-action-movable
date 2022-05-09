@@ -66,32 +66,32 @@ import { input } from './utils';
  */
 export function movable(
   node: HTMLElement,
-  parameters: Partial<MovableParameters> = { enabled: true, cache: 'none' },
+  parameters: Partial<MovableParameters> = { enabled: true },
 ) {
-  let { parent, normalizedDelta, cache, trigger, enabled } = input(node, parameters);
+  let { parent, normalizedDelta, trigger, enabled } = input(node, parameters);
 
-  const lastMouseCoordinates = { x: 0, y: 0 };
-  const lastNodeCoordinates = { top: 0, left: 0 };
+  const lastMousePosition = { x: 0, y: 0 };
+  const lastNodePosition = { top: 0, left: 0 };
   let ΣΔx = 0; // total displacement in x-axis
   let ΣΔy = 0; // total displacement in y-axis
 
-  const updateLastMouseCoordinates = (event: MouseEvent) => {
-    lastMouseCoordinates.x = event.clientX;
-    lastMouseCoordinates.y = event.clientY;
+  const updateLastMousePosition = (event: MouseEvent) => {
+    lastMousePosition.x = event.clientX;
+    lastMousePosition.y = event.clientY;
   };
 
-  const updateLastNodeCoordinates = ({ top, left }: { top: number; left: number }) => {
-    lastNodeCoordinates.top = top;
-    lastNodeCoordinates.left = left;
+  const updateLastNodePosition = ({ top, left }: typeof lastNodePosition) => {
+    lastNodePosition.top = top;
+    lastNodePosition.left = left;
   };
 
   const onMouseMove = (event: MouseEvent) => {
-    const Δx = event.clientX - lastMouseCoordinates.x;
-    const Δy = event.clientY - lastMouseCoordinates.y;
-    updateLastMouseCoordinates(event);
+    const Δx = event.clientX - lastMousePosition.x;
+    const Δy = event.clientY - lastMousePosition.y;
+    updateLastMousePosition(event);
 
-    let top = lastNodeCoordinates.top + Δy;
-    let left = lastNodeCoordinates.left + Δx;
+    let top = lastNodePosition.top + Δy;
+    let left = lastNodePosition.left + Δx;
 
     const nodeBoundingRect = node.getBoundingClientRect();
     let boundX = 0;
@@ -138,7 +138,7 @@ export function movable(
       }
     } else {
       if (boundX > 0) {
-        const newΣΔx = ΣΔx + left - lastNodeCoordinates.left;
+        const newΣΔx = ΣΔx + left - lastNodePosition.left;
         if (newΣΔx > boundX) {
           left -= newΣΔx - boundX;
         } else if (newΣΔx < -boundX) {
@@ -147,7 +147,7 @@ export function movable(
       }
 
       if (boundY > 0) {
-        const newΣΔy = ΣΔy + top - lastNodeCoordinates.top;
+        const newΣΔy = ΣΔy + top - lastNodePosition.top;
         if (newΣΔy > boundY) {
           top -= newΣΔy - boundY;
         } else if (newΣΔy < -boundY) {
@@ -159,9 +159,9 @@ export function movable(
     node.style.left = `${left}px`;
     node.style.top = `${top}px`;
 
-    ΣΔx += left - lastNodeCoordinates.left;
-    ΣΔy += top - lastNodeCoordinates.top;
-    updateLastNodeCoordinates({ top, left });
+    ΣΔx += left - lastNodePosition.left;
+    ΣΔy += top - lastNodePosition.top;
+    updateLastNodePosition({ top, left });
   };
 
   const end = () => {
@@ -177,11 +177,11 @@ export function movable(
 
     const computedStyles = getComputedStyle(node);
 
-    // init coordinates
+    // init position
     const regex = '^[-0-9]+';
     const left = parseInt(computedStyles.getPropertyValue('left').match(regex)?.[0] ?? '0');
     const top = parseInt(computedStyles.getPropertyValue('top').match(regex)?.[0] ?? '0');
-    updateLastNodeCoordinates({ left, top });
+    updateLastNodePosition({ left, top });
 
     // init position style
     const position = computedStyles.getPropertyValue('position');
@@ -189,7 +189,7 @@ export function movable(
       node.style.position = 'relative';
     }
 
-    updateLastMouseCoordinates(event);
+    updateLastMousePosition(event);
 
     document.body.style.userSelect = 'none';
     document.body.style.cursor = 'move';
@@ -213,7 +213,7 @@ export function movable(
         trigger.removeEventListener('mousedown', onMouseDown, true);
       }
 
-      ({ parent, normalizedDelta, cache, trigger, enabled } = update);
+      ({ parent, normalizedDelta, trigger, enabled } = update);
     },
     destroy() {
       trigger.removeEventListener('mousedown', onMouseDown, true);

@@ -20,7 +20,7 @@ export interface MovableParameters
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [enabled](./svelte-movable.movableparameters.enabled.md) | boolean | whether to trigger the action |
+|  [enabled?](./svelte-movable.movableparameters.enabled.md) | boolean | <i>(Optional)</i> whether to trigger the action |
 |  [limit?](./svelte-movable.movableparameters.limit.md) | [MovableLimit](./svelte-movable.movablelimit.md) | <i>(Optional)</i> Set a limit within which node can be moved |
 |  [trigger?](./svelte-movable.movableparameters.trigger.md) | HTMLElement | <i>(Optional)</i> A node that triggers mousedown event, otherwise the node itself is the trigger |
 
