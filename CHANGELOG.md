@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.1.1](https://github.com/vnphanquang/svelte-action-movable/compare/v1.1.0...v1.1.1) (2022-05-09)
+
+
+### Bug Fixes
+
+* **README:** reflect typescript event declaration ([1103ef8](https://github.com/vnphanquang/svelte-action-movable/commit/1103ef8ad6d3634f92a0959c43ad161e2a5d2f3b))
+
+
+### Documentation
+
+* **README:** add ##installation ([e5d817d](https://github.com/vnphanquang/svelte-action-movable/commit/e5d817dc32a2040008caa70df8cb65d299950e58))
+
 ## [1.1.0](https://github.com/vnphanquang/svelte-action-movable/compare/v1.0.4...v1.1.0) (2022-05-09)
 
 
