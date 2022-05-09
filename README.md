@@ -6,6 +6,8 @@
 
 [![github.actions.release.badge]][github.actions.release]
 
+![demo](./static/images/demo.gif)
+
 </div>
 
 ## Table of Contents
@@ -30,9 +32,8 @@
 <details open>
   <summary>Example: show / hide</summary>
 
-While `mousedown` of the trigger `button` element
-
-- `mousemove` will trigger `div` to move accordingly; a `CustomEvent` `movablestart`is dispatched,
+- `mousedown` of the trigger `button` element, a `CustomEvent` `movablestart`is dispatched,
+- `mousemove` will trigger `div` to move accordingly;
 - movement will be limited to the border of the `containerNode`, plus and minus 20% of the width & height of the `div` that the action is being used on,
 - `mouseup` will stop the movement; a `CustomEvent` `movableend` is dispatched.
 
