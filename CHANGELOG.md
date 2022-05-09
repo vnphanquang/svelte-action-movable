@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.1.0](https://github.com/vnphanquang/svelte-action-movable/compare/v1.0.4...v1.1.0) (2022-05-09)
+
+
+### Features
+
+* **movable:** exapand event detail to object, include last known position ([97fd0e2](https://github.com/vnphanquang/svelte-action-movable/commit/97fd0e28f392e8ae9c5792a2645c23a6588102e9))
+
+
+### Code Refactoring
+
+* **types:** remove cache option and make consistent interface declarations ([48a78a8](https://github.com/vnphanquang/svelte-action-movable/commit/48a78a820987ff496f49c9666b0161044bbb707e))
+
+
+### Documentation
+
+* **MovableEventDetails:** generate docs for event detail output ([b10a51c](https://github.com/vnphanquang/svelte-action-movable/commit/b10a51c032984b70f6c5ff0a8d1a3a0d30dff5d9))
+* **README:** add demo gif ([050db2a](https://github.com/vnphanquang/svelte-action-movable/commit/050db2ae21b69725df7691222e54fd213117fe47))
+
 ### [1.0.4](https://github.com/vnphanquang/svelte-action-movable/compare/v1.0.3...v1.0.4) (2022-05-08)
 
 
