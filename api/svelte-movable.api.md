@@ -11,6 +11,15 @@ export function movable(node: HTMLElement, parameters?: Partial<MovableParameter
 };
 
 // @public
+export interface MovableEventDetails {
+    node: HTMLElement;
+    position: {
+        left: number;
+        top: number;
+    };
+}
+
+// @public
 export interface MovableLimit {
     delta?: {
         x: MovableLimitDelta;

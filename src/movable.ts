@@ -19,22 +19,25 @@ import { input } from './utils';
  *
  * <-- incorrect usage-->
  * <Component use:movable/>
+ * ```
  *
- * ### Side Effects
  *
- * Be aware that:
+ * Be aware of side effects:
  *
  * - element.style.position is set to `relative` (if not already 'absolute' / 'relative') the first time mousedown is triggered
- * - document.body.userSelect is set to `none` after `mousedown` and restored on `mouseup`
- * - document.body.cursor is set to `move` after `mousedown` and restored on `mouseup`
  *
- * ```
+ * - document.body.userSelect is set to `none` after `mousedown` and restored on `mouseup`
+ *
+ * - document.body.cursor is set to `move` after `mousedown` and restored on `mouseup`
  *
  * @example Typical usage
  *
  * 1. `mousedown` of the trigger `button` element, a `CustomEvent` `movablestart`is dispatched,
+ *
  * 2. `mousemove` will trigger `div` to move accordingly;
+ *
  * 3. movement will be limited to the border of the `containerNode`, plus and minus 20% of the width & height of the `div` that the action is being used on,
+ *
  * 4. `mouseup` will stop the movement; a `CustomEvent` `movableend` is dispatched.
  *
  * ```svelte

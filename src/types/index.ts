@@ -89,7 +89,26 @@ export interface MovableParameters {
 }
 
 /**
- * the detail payload for `movableend` and `movablestart` CustomEvent
+ * `detail` payload for `movableend` and `movablestart` CustomEvent
+ * @public
+ *
+ * @example
+ *
+ * ```svelte
+ * <script>
+ *  function handler(event) {
+ *    const { position, node } = event.detail;
+ *    console.log('action movable was used on element', node);
+ *    console.log('last known position:', position);
+ * }
+ * </script>
+ *
+ * <div
+ *  use:movable
+ *  on:movablestart={handler}
+ *  on:movableend={handler}
+ * />
+ * ```
  */
 export interface MovableEventDetails {
   /** the node that the action was placed on */

@@ -16,6 +16,7 @@ svelte action - `use:movable` move node on mousedown
 
 |  Interface | Description |
 |  --- | --- |
+|  [MovableEventDetails](./svelte-movable.movableeventdetails.md) | <code>detail</code> payload for <code>movableend</code> and <code>movablestart</code> CustomEvent |
 |  [MovableLimit](./svelte-movable.movablelimit.md) | The limit within which node can be moved |
 |  [MovableParameters](./svelte-movable.movableparameters.md) | svelte action parameters to config behavior of movable |
 

@@ -39,13 +39,29 @@ svelte action interface
 <-- incorrect usage-->
 <Component use:movable/>
 ```
+Be aware of side effects:
+
+- element.style.position is set to `relative` (if not already 'absolute' / 'relative') the first time mousedown is triggered
+
+- document.body.userSelect is set to `none` after `mousedown` and restored on `mouseup`
+
+- document.body.cursor is set to `move` after `mousedown` and restored on `mouseup`
 
 ## Example
 
 Typical usage
 
+1. `mousedown` of the trigger `button` element, a `CustomEvent` `movablestart`<!-- -->is dispatched,
+
+2. `mousemove` will trigger `div` to move accordingly;
+
+3. movement will be limited to the border of the `containerNode`<!-- -->, plus and minus 20% of the width &amp; height of the `div` that the action is being used on,
+
+4. `mouseup` will stop the movement; a `CustomEvent` `movableend` is dispatched.
+
 ```svelte
 <script lang="ts">
+  import { fade } from 'svelte/transition'
   import arrows from 'svelte-awesome/icons/arrows';
   import Icon from 'svelte-awesome/components/Icon.svelte';
 
@@ -67,8 +83,8 @@ Typical usage
         },
         trigger: triggerNode,
       }}
-      on:movablestart={() => console.log('movable:start')}
-      on:movableend={() => console.log('movable:end')}
+      on:movablestart={(event) => console.log('movable:start', event.detail.node, event.detail.position)}
+      on:movableend={(event) => console.log('movable:end', event.detail.node, event.detail.position)}
     >
       <button
         bind:this={triggerNode}
