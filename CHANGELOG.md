@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.1.2](https://github.com/vnphanquang/svelte-action-movable/compare/v1.1.1...v1.1.2) (2022-05-11)
+
+
+### Documentation
+
+* **README:** example link should href to correct section ([897bcec](https://github.com/vnphanquang/svelte-action-movable/commit/897bcecc6fdb1b22fc89f917c80ef5f0814da7a9))
+* **README:** fix link to CONTRIBUTING.md ([65847ee](https://github.com/vnphanquang/svelte-action-movable/commit/65847eee6049d385398a6f38e6d43466ae5b4908))
+
+
+### Development
+
+* add svelte-kit dev environment ([5f233a9](https://github.com/vnphanquang/svelte-action-movable/commit/5f233a9730968d3b90761603a779be8535217e7e))
+
 ### [1.1.1](https://github.com/vnphanquang/svelte-action-movable/compare/v1.1.0...v1.1.1) (2022-05-09)
 
 
