@@ -41,7 +41,7 @@ pnpm add svelte-movable
 
 ## Usage
 
-See [example for typical usage here][github.api.movable]
+See [example for typical usage here](./api/docs/svelte-movable.movable.md#example).
 
 </details>
 
