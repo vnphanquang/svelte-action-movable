@@ -1,7 +1,8 @@
 import { resolve } from 'path';
 
-import typescript from '@rollup/plugin-typescript';
+import ts from '@rollup/plugin-typescript';
 import filesize from 'rollup-plugin-filesize';
+import typescript from 'typescript';
 
 /** @type {import('rollup').RollupOptions} */
 const config = {
@@ -11,7 +12,13 @@ const config = {
     dir: './lib',
     format: 'esm',
   },
-  plugins: [typescript(), filesize()],
+  plugins: [
+    ts({
+      tsconfig: resolve(__dirname, 'tsconfig.build.json'),
+      typescript,
+    }),
+    filesize(),
+  ],
 };
 
 export default config;

@@ -67,6 +67,7 @@ Typical usage
 
   let modal = false;
   let triggerNode: HTMLElement;
+  let containerNode: HTMLElement;
 </script>
 
 <container>

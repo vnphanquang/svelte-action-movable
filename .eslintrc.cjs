@@ -7,7 +7,12 @@ module.exports = {
     'prettier',
     'plugin:import/typescript',
   ],
-  plugins: ['import', '@typescript-eslint'],
+  plugins: ['svelte3', 'import', '@typescript-eslint'],
+  ignorePatterns: [],
+  overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
+  settings: {
+    'svelte3/typescript': () => require('typescript'),
+  },
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 2020,

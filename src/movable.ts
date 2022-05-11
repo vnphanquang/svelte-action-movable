@@ -48,6 +48,7 @@ import { input } from './utils';
  *
  *   let modal = false;
  *   let triggerNode: HTMLElement;
+ *   let containerNode: HTMLElement;
  * </script>
  *
  * <container>

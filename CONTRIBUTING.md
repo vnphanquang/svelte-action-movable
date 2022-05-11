@@ -40,6 +40,8 @@ This repo uses [pnpm]. After forking and/or cloning the repo, a typical workflow
 ```bash
 pnpm install
 
+pnpm dev
+
 pnpm build
 ```
 

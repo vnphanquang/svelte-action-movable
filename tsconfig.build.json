@@ -1,0 +1,18 @@
+{
+  "include": ["./src/**/*.ts"],
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["esnext", "DOM"],
+    "moduleResolution": "node",
+    "module": "esnext",
+    "strict": true,
+    "target": "es5",
+    "sourceMap": true,
+    "outDir": "./lib",
+    "declaration": true,
+    "declarationDir": "./lib",
+    "declarationMap": true
+  },
+  "exclude": ["./src/dev"]
+}

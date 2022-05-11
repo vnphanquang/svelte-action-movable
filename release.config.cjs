@@ -16,6 +16,7 @@ const conventionalcommits = {
     { type: 'build', section: 'Build System' },
     { type: 'ci', section: 'Continuous Integration' },
     { type: 'style', section: 'Styles', hidden: true },
+    { type: 'dev', section: 'Development', hidden: false },
     { type: 'chore', section: 'Miscellaneous Chores', hidden: true },
   ],
 };
@@ -37,7 +38,10 @@ const options = {
       {
         preset: 'conventionalcommits',
         presetConfig: conventionalcommits,
-        releaseRules: [{ type: 'docs', scope: 'README', release: 'patch' }],
+        releaseRules: [
+          { type: 'docs', scope: 'README', release: 'patch' },
+          { type: 'dev', release: 'patch' },
+        ],
       },
     ],
     [
