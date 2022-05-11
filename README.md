@@ -110,7 +110,7 @@ Quick access to the parameter interface accepted by the action: [MovableParamete
 [github.release.badge]: https://img.shields.io/github/v/release/vnphanquang/svelte-action-movable
 [github.release]: https://github.com/vnphanquang/svelte-action-movable/releases
 [github.changelog]: ./CHANGELOG
-[github.contributing]: ./CONTRIBUTING
+[github.contributing]: ./CONTRIBUTING.md
 [github.issues]: https://github.com/vnphanquang/svelte-action-movable/issues?q=
 [github.api]: ./api/docs/index.md
 [github.api.movableparameters]: api/docs/svelte-movable.movableparameters.md
