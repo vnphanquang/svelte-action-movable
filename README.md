@@ -32,11 +32,9 @@
 ## Installation
 
 ```bash
-npm install svelte-movable
-yarn add svelte-movable
-pnpm add svelte-movable
-
-# Note: add to dev dependencies instead if using svelte-kit
+npm install -D svelte-movable
+yarn add -D svelte-movable
+pnpm add -D svelte-movable
 ```
 
 ## Usage
