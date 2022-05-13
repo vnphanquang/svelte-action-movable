@@ -1,5 +1,15 @@
 # Svelte Action - `use:movable`
 
+# This package has been moved to [the @svelte-put monorepo](https://github.com/vnphanquang/svelte-put/tree/main/packages/actions/movable). You can still use this package as is but a reinstallation is recommended.
+
+```bash
+# remove svelte-movable from your package.json
+
+npm install -D @svelte-put/movable
+yarn add -D @svelte-put/movable
+pnpm add -D @svelte-put/movable
+```
+
 <div align="center">
 
 [![npm.badge]][npm] [![bundlephobia.badge]][bundlephobia] [![semantic-release.badge]][semantic-release] [![MIT][license.badge]][license]
