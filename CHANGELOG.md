@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.1.3](https://github.com/vnphanquang/svelte-action-movable/compare/v1.1.2...v1.1.3) (2022-05-13)
+
+
+### Documentation
+
+* **README:** DEPRECATION NOTICE ([83e8883](https://github.com/vnphanquang/svelte-action-movable/commit/83e8883b4f37a2ffd9039a344161c7eceb9eed2e))
+* **README:** installation - instruct to install to dev dependencies ([753aca8](https://github.com/vnphanquang/svelte-action-movable/commit/753aca81ce4f07fe94e5f6ed4f0a6aca6210284b))
+
 ### [1.1.2](https://github.com/vnphanquang/svelte-action-movable/compare/v1.1.1...v1.1.2) (2022-05-11)
 
 
